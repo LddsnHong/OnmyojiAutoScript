@@ -23,10 +23,6 @@
 一键托管
 
 
-### [文档](https://runhey.github.io/OnmyojiAutoScript-website/)
-
-#### 主仓库: [https://github.com/runhey/OnmyojiAutoScript](https://github.com/runhey/OnmyojiAutoScript)
-
 </div>
 
 阴阳师，作为一个手游，已经进入了生命周期的晚期。从现在到关服的这段时间里，请减少花费在阴阳师上的时间，把一切都交给 OAS。
