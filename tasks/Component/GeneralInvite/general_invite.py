@@ -618,17 +618,17 @@ class GeneralInvite(BaseTask, GeneralInviteAssets):
             logger.info('Click default invite')
             while 1:
                 self.screenshot()
-                if self.appear(self.I_I_DEFAULT):
+                if self.appear(self.I_UI_CHECK):
                     break
-                if self.appear_then_click(self.I_I_NO_DEFAULT, interval=1):
+                if self.appear_then_click(self.I_UI_UNCHECK, interval=3):
                     continue
         else:
             logger.info('Click no default invite')
             while 1:
                 self.screenshot()
-                if self.appear(self.I_I_NO_DEFAULT):
+                if self.appear(self.I_UI_UNCHECK):
                     break
-                if self.appear_then_click(self.I_I_DEFAULT, interval=1):
+                if self.appear_then_click(self.I_UI_CHECK, interval=3):
                     continue
 
         # 点击确认
@@ -651,16 +651,15 @@ class GeneralInvite(BaseTask, GeneralInviteAssets):
 
         if default_invite:
             # 有可能是挑战失败的
-            if self.appear(self.I_I_DEFAULT) or self.appear(self.I_I_NO_DEFAULT):
+            if self.appear(self.I_UI_CHECK) or self.appear(self.I_UI_UNCHECK):
                 logger.info('Click default invite')
                 while 1:
                     self.screenshot()
                     if self.is_in_room(False):
                         break
-                    if self.appear(self.I_I_DEFAULT):
+                    if self.appear(self.I_UI_CHECK):
                         break
-                    if self.appear_then_click(self.I_I_NO_DEFAULT, interval=1):
-                        sleep(0.8)  # 取自 runhey#1886：点击后等 UI 状态刷新，避免误判
+                    if self.appear_then_click(self.I_UI_UNCHECK, interval=3):
                         continue
         # 点击确认
         while 1:
@@ -690,7 +689,7 @@ class GeneralInvite(BaseTask, GeneralInviteAssets):
             # https://github.com/runhey/OnmyojiAutoScript/issues/230
             if self.appear(GeneralBattleAssets.I_EXIT):
                 return False
-            if self.appear_then_click(self.I_I_NO_DEFAULT, interval=1):
+            if self.appear_then_click(self.I_UI_UNCHECK, interval=3):
                 continue
             if self.appear_then_click(self.I_GI_SURE, interval=1):
                 continue
