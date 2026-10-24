@@ -372,8 +372,8 @@
   {
     "itemName": "gi_sure",
     "imageName": "gi_gi_sure.png",
-    "roiFront": "670,402,175,60",
-    "roiBack": "670,402,175,60",
+    "roiFront": "667,398,179,66",
+    "roiBack": "547,368,322,122",
     "method": "Template matching",
     "threshold": 0.8,
     "profile": "High",
